@@ -1,0 +1,197 @@
+.hero {
+  background: #d4ebff;
+  display: flex;
+  justify-content: center;
+  padding: 0 0 70px;
+  .container {
+    min-width: 952px;
+    .row {
+      justify-content: center;
+      align-items: center;
+      .leftSide {
+        width: 50%;
+        color: #040607;
+        .title {
+          margin: 0px 0px 0.5rem;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 1.28571;
+          letter-spacing: 0.02em;
+        }
+        .text {
+          font-family: "Merriweather", serif;
+          font-weight: 400;
+          font-size: 42px;
+          letter-spacing: -3.5px;
+          margin: 0px 0px 0.5rem;
+        }
+        & .bold {
+          //   font-family: "Lora", serif;
+          font-weight: 900;
+          line-height: 1;
+          font-size: 56px;
+          letter-spacing: -2px;
+          width: 70%;
+        }
+        .buttons {
+          width: 100%;
+          margin-top: 40px;
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 18px;
+          .leftButton {
+            position: relative;
+            z-index: 99;
+            cursor: pointer;
+            background-color: #fff;
+            border-radius: 35px;
+            border: transparent;
+            a {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              color: #5a1f06;
+              background-color: #ffffff;
+              border: 2px solid #5a1f06;
+              padding: 12px 32px;
+              border-radius: 35px;
+              img {
+                width: 32px;
+                height: 32px;
+              }
+              .buttonText {
+                font-family: "Merriweather", serif;
+                color: #5a1f06;
+                font-weight: 900;
+                font-size: 18px;
+                line-height: 18px;
+              }
+              &::before {
+                background: radial-gradient(
+                  101.97% 2204.87% at 101.97% 40.83%,
+                  #da418c 0%,
+                  #d70100 15.27%,
+                  #ff6701 29.33%,
+                  #ffd200 43.4%,
+                  #00b035 56.42%,
+                  #0f79eb 71%,
+                  #be9fff 84.54%,
+                  #da408f 100%
+                );
+                position: absolute;
+                bottom: -6px;
+                left: -6px;
+                z-index: -1;
+                content: "";
+                height: 100%;
+                width: 100%;
+                border-radius: 999rem;
+                opacity: 0;
+                transition: 0.3s ease;
+              }
+              &:hover::before {
+                opacity: 1;
+              }
+            }
+          }
+          .rightButton {
+            cursor: pointer;
+            background: transparent;
+            border: 2px solid #5a1f06;
+            border-radius: 35px;
+            padding: 18px 40px;
+            transition: 0.3s ease;
+            a {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              color: #5a1f06;
+              .buttonText {
+                font-family: "Merriweather", serif;
+                color: #5a1f06;
+                font-weight: 900;
+                font-size: 18px;
+                line-height: 20px;
+              }
+            }
+            &:hover {
+              background-color: #fff;
+              box-shadow: -6px 6px 0 #5a1f06;
+            }
+          }
+        }
+      }
+      .rightSide {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        overflow: hidden;
+        .heroImage {
+          margin: -30px 0 0;
+          width: 522px;
+          height: 522px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero {
+    padding: 35px 0;
+    .container {
+      width: 90%;
+      min-width: 370px;
+      .row {
+        flex-direction: column;
+        .leftSide {
+          width: 100%;
+          .buttons {
+            .leftButton {
+              width: 100%;
+              a {
+                justify-content: center;
+              }
+            }
+            .rightButton {
+              width: 100%;
+              a {
+                justify-content: center;
+              }
+            }
+          }
+        }
+        .rightSide {
+          width: 100%;
+          justify-content: flex-end;
+          .heroImage {
+            margin: 40px 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    .container {
+      width: 94%;
+    }
+  }
+}
+
+@media (max-width: 457px) {
+  .hero {
+    .container {
+      width: 90%;
+    }
+  }
+}

@@ -1,0 +1,319 @@
+.footer {
+  width: 100%;
+  position: relative;
+  .marsDiv{
+    width: 100%;
+    height: 100vh;
+    display: block;
+    visibility: visible;
+    background: #000000c0;
+    position: absolute;
+    bottom: 0;
+    z-index: 9999;
+    .marsBox {
+      width: 375px;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0px 24px 40px;
+      border: transparent;
+      border-radius: 15px;
+      background: #fff;
+      position: absolute;
+      left: calc(50% - 187.5px);
+      bottom: 19%;
+      .closeIcon {
+        margin-left: auto;
+        cursor: pointer;
+      }
+      .topPart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .logo {
+          width: 70px;
+          height: 40px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+        .title {
+          font-family: "AllTogetherSerif", "Times New Roman", Times, serif;
+          font-weight: 900;
+          font-size: 30px;
+          color: #5a1f06;
+          margin: 30px 0;
+        }
+      }
+      .brands {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 30px;
+        .brandImg {
+          width: 139.5px;
+          height: 69.75px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+      .marsBoxButton {
+        cursor: pointer;
+        background: rgb(255, 210, 0);
+        border: none;
+        border-radius: 35px;
+        width: 100%;
+        padding: 11px 40px;
+        transition: 0.3s ease;
+        margin: 30px 0 0;
+        .button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          color: #5a1f06;
+          font-family: "Merriweather", serif;
+          font-weight: 900;
+          font-size: 14px;
+          line-height: 20px;
+        }
+        &:hover {
+          box-shadow: -6px 6px 0 #5a1f06;
+        }
+      }
+    }
+    &.hidden {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  .footerImage {
+    background-color: #ffd200;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 0;
+    position: relative;
+    z-index: 1;
+    .imagePart {
+      width: 1016px;
+      height: 368px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &::before {
+      content: "";
+      height: 150px;
+      width: 100%;
+      border-radius: 100% 100% 0 0;
+      background: #f3f6fa;
+      position: absolute;
+      top: 84%;
+      left: 0;
+      z-index: -1;
+    }
+  }
+  .footerInfo {
+    width: 100%;
+    background-color: #f3f6fa;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 999;
+    .container {
+      .contactDetails {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0;
+        border-bottom: 2px solid #00000018;
+        .contactDetail {
+          display: flex;
+          align-items: center;
+          gap: 25px;
+          .detailImage {
+            width: 80px;
+            height: 80px;
+            a {
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+            }
+          }
+          .detailInfo {
+            width: 50%;
+            .title {
+              margin-bottom: 4px;
+            }
+            .text {
+              font-family: "AllTogetherSans", -apple-system,
+                "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue",
+                "Arial", sans-serif;
+              font-weight: 400;
+              font-size: 16px;
+              color: #040607;
+              letter-spacing: -0.4px;
+              a {
+                color: #5a1f06;
+                cursor: pointer;
+                border-bottom: 2px solid #ffd200;
+                transition: 0.3s ease;
+                &:hover {
+                  border: none;
+                }
+              }
+            }
+          }
+        }
+      }
+      .footerLinks {
+        padding: 50px 0;
+        display: flex;
+        width: 100%;
+        gap: 100px;
+        border-bottom: 2px solid #00000018;
+        .leftSide {
+          width: 30%;
+          .title {
+            font-family: "AllTogetherSerif", "Times New Roman", Times, serif;
+            font-weight: 900;
+            font-size: 30px;
+            color: #5a1f06;
+            margin-bottom: 16px;
+          }
+        }
+        .rightSide {
+          width: 70%;
+          display: flex;
+          justify-content: space-between;
+          .links {
+            .title {
+              margin-bottom: 24px;
+              text-transform: lowercase;
+              color: #5a1f06;
+            }
+            .list {
+              .listItem {
+                margin-bottom: 8px;
+                display: flex;
+                align-items: center;
+                a {
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                  color: #040607;
+                  font-weight: 500;
+                  border-bottom: 2px solid #f3f6fa;
+                  img {
+                    width: 14px;
+                    height: 14px;
+                  }
+                  &:hover {
+                    color: #5a1f06;
+                    border-bottom: 2px solid #ffd200;
+                  }
+                }
+              }
+            }
+          }
+          .socials {
+            .title {
+              margin-bottom: 24px;
+              padding-left: 8px;
+              color: #5a1f06;
+              text-transform: lowercase;
+            }
+            .socialList {
+              display: flex;
+              align-items: center;
+              .socialItem {
+                background: transparent;
+                border: none;
+                padding: 6px 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                img {
+                  width: 40px;
+                  height: 40px;
+                }
+                &:hover {
+                  background-color: #ffd200;
+                  border-radius: 50%;
+                }
+              }
+            }
+          }
+        }
+      }
+      .marsSettings {
+        width: 100%;
+        padding: 30px 0;
+        display: flex;
+        .leftSide {
+          width: 35%;
+          .marsImage {
+            width: 100px;
+            height: 40px;
+            display: flex;
+            cursor: pointer;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+        }
+        .rightSide {
+          width: 65%;
+          .links {
+            .list {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 10px;
+              .listItem {
+                a {
+                  color: #040607;
+                  font-size: 14px;
+                  font-weight: 500;
+                  border-bottom: 1px solid #040607;
+                  transition: 0.8s ease;
+                  &:hover {
+                    border-bottom: none;
+                  }
+                  img {
+                    width: 14px;
+                    height: 14px;
+                    margin-left: 4px;
+                  }
+                }
+              }
+            }
+          }
+          .copy {
+            margin-top: 10px;
+            font-family: "AllTogetherSans", -apple-system, "BlinkMacSystemFont",
+              "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.5;
+            letter-spacing: 0;
+          }
+        }
+      }
+    }
+  }
+}

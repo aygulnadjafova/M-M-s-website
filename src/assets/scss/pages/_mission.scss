@@ -1,0 +1,131 @@
+.mission {
+  background: #ffd200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  position: relative;
+  z-index: 0;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .row {
+      .textPart {
+        width: 100%;
+        margin: 0 auto;
+        color: #5a1f06;
+        padding: 0 0 100px;
+        text-align: center;
+        .title {
+          margin: 0px 0px 0.5rem;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 1.28571;
+          letter-spacing: 0.02em;
+        }
+        &::before {
+          content: "";
+          height: 160px;
+          width: 100%;
+          border-radius: 100% 100% 0 0;
+          background: #ffd200;
+          position: absolute;
+          top: -10%;
+          left: 0;
+          z-index: -1;
+        }
+        .text {
+          font-family: "Merriweather", serif;
+          font-weight: 300;
+          font-size: 40px;
+          letter-spacing: -3px;
+          margin: 0px 0px 32px;
+          text-align: center;
+        }
+        .button {
+          cursor: pointer;
+          background: #fff;
+          border: transparent;
+          border-radius: 35px;
+          padding: 20px 40px;
+          transition: 0.3s ease;
+          a {
+            color: #5a1f06;
+            .buttonText {
+              font-family: "Merriweather", serif;
+              color: #5a1f06;
+              font-weight: 900;
+              font-size: 18px;
+              line-height: 20px;
+            }
+          }
+          &:hover {
+            box-shadow: -6px 6px 0 #5a1f06;
+          }
+        }
+      }
+    }
+  }
+  .imgPart {
+    width: 90%;
+    padding: 50px 0 75px;
+    display: flex;
+    justify-content: center;
+    .bgImage {
+      background-image: url(../../images/photos/mms-mission-characters-desktop.webp);
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 320px;
+      background-size: contain;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .mission {
+    .container {
+      width: 94%;
+      .row {
+        .textPart {
+          padding: 0 0 40px;
+          .text {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+    .imgPart {
+      width: 50%;
+      padding: 0 0 40px;
+      .bgImage {
+        background-image: url(../../images/photos/mms-mission-characters-mobile.png);
+        height: 440px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .mission {
+    .container {
+      .row {
+        .textPart {
+          .button {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .imgPart {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      .bgImage {
+        width: 100%;
+      }
+    }
+  }
+}

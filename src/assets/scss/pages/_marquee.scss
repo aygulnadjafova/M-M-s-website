@@ -1,0 +1,16 @@
+.marquee {
+  padding: 128px 0 228px;
+  background: #d4ebff;
+  span {
+    font-size: 50px;
+    font-family: "AllTogetherSerif", "Times New Roman", Times, serif;
+    color: #5a1f06;
+    line-height: 1.6;
+    letter-spacing: -3.5px;
+    font-weight: 500;
+    &.ampersant{
+        font-weight: 700;
+        margin: 0 10px;
+    }
+  }
+}

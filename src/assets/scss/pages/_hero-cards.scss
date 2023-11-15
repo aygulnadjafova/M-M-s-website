@@ -1,0 +1,211 @@
+.heroCards {
+  width: 100%;
+  padding: 80px 0 0;
+  background: #d4ebff;
+  display: flex;
+  justify-content: center;
+  .container {
+    .row {
+      justify-content: center;
+      align-items: center;
+      .cards {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .cardItem {
+          width: 32%;
+          position: relative;
+          margin: 50px 0;
+          border-radius: 10px;
+
+          .topIcon {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: -100px;
+            left: 0;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          .cardInfo {
+            padding: 24px;
+            .imgPart {
+              width: 100%;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+            }
+            .textPart {
+              width: 100%;
+              text-align: center;
+
+              .title {
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 1.2857142857142858;
+                letter-spacing: 0.4px;
+                color: #fff;
+                margin: 8px 0;
+              }
+
+              .info {
+                height: 90px;
+                font-family: "Merriweather", serif;
+                font-weight: 900;
+                font-size: 24px;
+                letter-spacing: 0.2px;
+                line-height: 1.25;
+                color: #fff;
+                margin: 30px 0;
+              }
+
+              .link {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                a {
+                  position: relative;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 8px;
+                  font-weight: 700;
+                  font-size: 16px;
+                  letter-spacing: 0.4px;
+                  color: #000;
+                  cursor: pointer;
+                  img {
+                    width: 16px;
+                    height: 16px;
+                    object-fit: contain;
+                    margin-top: 2px;
+                  }
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background: #000;
+                    right: 0;
+                    bottom: -25%;
+                    transition: 0.3s ease;
+                  }
+                  &:hover:after {
+                    width: 0%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1875px) {
+  .heroCards {
+    .container {
+      .row {
+        .cards {
+          min-width: 928px;
+          .cardItem {
+            min-width: 32%;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1023px) {
+  .heroCards {
+    .container {
+      width: 100%;
+      .row {
+        .cards {
+          min-width: 300px;
+          .cardItem {
+            width: 40%;
+            min-width: none;
+            margin: 0;
+            .cardInfo {
+              .textPart {
+                .info {
+                  margin-bottom: 30px;
+                }
+              }
+            }
+            &:nth-child(1) {
+              margin-bottom: 600px;
+            }
+            &:nth-child(even) {
+              margin: 300px 0;
+            }
+            &:nth-child(2n + 3) {
+              margin: -460px 0 0 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .heroCards {
+    .container {
+      .row {
+        .cards {
+          gap: 200px;
+          .cardItem {
+            width: 95%;
+            &:nth-child(1) {
+              margin-bottom: 0;
+            }
+            &:nth-child(even) {
+              margin: 0 0 0 auto;
+            }
+            &:nth-child(2n + 3) {
+              margin: 0;
+            }
+            .cardInfo {
+              .textPart {
+                .info {
+                  height: 60px;
+                  margin-bottom: 30px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 424px) {
+  .heroCards {
+    .container {
+      .row {
+        .cards {
+          .cardItem {
+            .cardInfo {
+              .textPart {
+                .info {
+                  height: 70px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
