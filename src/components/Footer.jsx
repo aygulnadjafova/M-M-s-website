@@ -1,5 +1,15 @@
+// import router-dom elements
+import { Link } from "react-router-dom";
+
+import { useState } from "react";
+
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
 // import Footer background
 import footerDesktop from "../assets/images/photos/purpose-footer-with-purple-desktop.webp";
+import footerMobile from "../assets/images/photos/purpose-footer-with-purple-mobile.webp";
 
 // import Footer icons
 import storeIcon from "../assets/images/icons/location.svg";
@@ -23,13 +33,31 @@ import celebrations from "../assets/images/mars-box/Celebrations.webp";
 import marss from "../assets/images/mars-box/Mars.webp";
 import closeMarsBox from "../assets/images/icons/opened-burger.svg";
 
-// import router-dom elements
-import { Link } from "react-router-dom";
+const schema = yup.object().shape({
+  email: yup
+    .string()
+    .email("please enter a valid email address")
+    .required("please enter a valid email address"),
+});
 
-import { useState } from "react";
+const Footer = ({ label, ...rest }) => {
+  const [focused, setFocused] = useState(false); // for floating label input
+  const [openMars, setOpenMars] = useState(false); // for opening and closing Mars Box
+  const [isSignedUp, setIsSignedUp] = useState(false); //hiding submit button after signing up
 
-const Footer = () => {
-  const [openMars, setOpenMars] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmitHandler = () => {
+    setIsSignedUp(true);
+    reset();
+  };
 
   return (
     <section className="footer">
@@ -92,8 +120,19 @@ const Footer = () => {
         </div>
       </div>
       <div className="footerImage">
-        <div className="imagePart ">
-          <img src={footerDesktop} alt="purpose-footer-with-purple-desktop" />
+        <div className="desktopImgPart ">
+          <img
+            className="desktopImg"
+            src={footerDesktop}
+            alt="purpose-footer-with-purple-desktop"
+          />
+        </div>
+        <div className="mobileImgPart">
+          <img
+            className="mobileImg"
+            src={footerMobile}
+            alt="purpose-footer-with-purple-desktop"
+          />
         </div>
       </div>
       <div className="footerInfo">
@@ -134,32 +173,60 @@ const Footer = () => {
               <h2 className="title">
                 join the community for all deals and offers
               </h2>
-              <div className="form">
-                <form>
-                  <div className="inputDiv">
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Email address*"
-                      className="input"
-                    />
-                  </div>
-                  <div className="policy">
-                    <p>
-                      By clicking the submit button, you confirm that you are
-                      over the age of 16, are willing to receive marketing
-                      communications from M&M'S and agree to our{" "}
-                      <Link to={"https://www.mars.com/legal-uk"} target="_blank">
-                        Privacy Policy{" "}
-                        <img src={externalLink} alt="external-link" />
-                      </Link>
+              <form
+                noValidate
+                className="form"
+                onSubmit={handleSubmit(onSubmitHandler)}
+              >
+                {!isSignedUp && (
+                  <>
+                    <div
+                      className={`floatingLabelInput ${
+                        focused ? "focused" : ""
+                      }`}
+                    >
+                      <input
+                        {...register("email")}
+                        type="email"
+                        name="email"
+                        id="email"
+                        {...rest}
+                        onFocus={() => setFocused(true)}
+                        onBlur={(e) => !e.target.value && setFocused(false)}
+                        required
+                      />
+                      <p className="emailvalidate">{errors.email?.message}</p>
+                      <label htmlFor="email">Email address*</label>
+                    </div>
+                    <div className="policy">
+                      <p>
+                        By clicking the submit button, you confirm that you are
+                        over the age of 16, are willing to receive marketing
+                        communications from M&M'S and agree to our{" "}
+                        <Link
+                          to={"https://www.mars.com/legal-uk"}
+                          target="_blank"
+                        >
+                          Privacy Policy{" "}
+                          <img src={externalLink} alt="external-link" />
+                        </Link>
+                      </p>
+                    </div>
+                    <button type="submit" className="button">
+                      Sign Up Now
+                    </button>
+                  </>
+                )}
+                {isSignedUp && (
+                  <>
+                    <p className="policy">
+                      Thank you for signing up and welcome to the M&M's
+                      community. You will receive an email to confirm your
+                      subscription.
                     </p>
-                  </div>
-                  <div className="signupButton">
-                    <button type="submit">sign up now</button>
-                  </div>
-                </form>
-              </div>
+                  </>
+                )}
+              </form>
             </div>
             <div className="rightSide">
               <div className="links">
