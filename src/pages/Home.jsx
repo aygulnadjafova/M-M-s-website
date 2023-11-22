@@ -5,7 +5,7 @@ import MarqueeSec from "./homeSections/MarqueeSec";
 import Mission from "./homeSections/Mission";
 import Occasions from "./homeSections/Occasions";
 import FeaturedProducts from "./homeSections/FeaturedProducts";
-import Wedding from "./homeSections/Wedding";
+import ShareFun from "./homeSections/ShareFun";
 
 const Home = () => {
   return (
@@ -16,7 +16,7 @@ const Home = () => {
       <Mission />
       <Occasions />
       <FeaturedProducts />
-      <Wedding />
+      <ShareFun />
     </main>
   );
 };
