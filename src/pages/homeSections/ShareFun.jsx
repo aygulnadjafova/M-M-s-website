@@ -13,9 +13,7 @@ import slideOne from "../../assets/images/photos/share-fun-1.webp";
 import slideTwo from "../../assets/images/photos/share-fun-2.webp";
 import slideThree from "../../assets/images/photos/share-fun-3.webp";
 import slideFour from "../../assets/images/photos/share-fun-4.webp";
-// import slideFive from "../../assets/images/photos/share-fun-5.webp";
-
-import svgOne from "../../assets/images/icons/rainbow.svg"
+import slideFive from "../../assets/images/photos/share-fun-5.webp";
 
 const ShareFun = () => {
   return (
@@ -31,28 +29,72 @@ const ShareFun = () => {
           </div>
           <div className="mainPart">
             <Swiper
+              breakpoints={{
+                // when window width is >= 640px
+                1024: {
+                  width: 1024,
+                  slidesPerView: 4,
+                },
+                // when window width is >= 768px
+                768: {
+                  width: 768,
+                  slidesPerView: 3,
+                },
+                // when window width is >= 350px
+                350: {
+                  width: 350,
+                  slidesPerView: 2,
+                },
+              }}
               slidesPerView={4}
               scrollbar={{
                 draggable: true,
-                dragSize: 500,
+                dragSize: 400,
               }}
               modules={[Scrollbar]}
               className="mySwiper"
             >
-              <SwiperSlide className="slide">
+              <SwiperSlide className="slideOne">
                 <div className="slideItem">
                   <div className="slideImage">
                     <img src={slideOne} alt="slide-imagee" />
                   </div>
                   <p className="itemName">@candicemc</p>
-                  <span className="svgOne"><img src={svgOne} alt="" /></span>
+                  <p className="hashtag">#shareyourfun</p>
                 </div>
               </SwiperSlide>
-              <SwiperSlide className="slide">Slide 2</SwiperSlide>
-              <SwiperSlide className="slide">Slide 3</SwiperSlide>
-              <SwiperSlide className="slide">Slide 4</SwiperSlide>
-              <SwiperSlide className="slide">Slide 5</SwiperSlide>
-              <SwiperSlide className="slide">Slide 6</SwiperSlide>
+              <SwiperSlide className="slideTwo">
+                <div className="slideItem">
+                  <div className="slideImage">
+                    <img src={slideTwo} alt="slide-imagee" />
+                  </div>
+                  <p className="itemName">@caltlyna</p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="slideThree">
+                <div className="slideItem">
+                  <div className="slideImage">
+                    <img src={slideThree} alt="slide-imagee" />
+                  </div>
+                  <p className="itemName">@ashleywhite123</p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="slideFour">
+                <div className="slideItem">
+                  <div className="slideImage">
+                    <img src={slideFour} alt="slide-imagee" />
+                  </div>
+                  <p className="itemName">@angelinaf</p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="slideFive">
+                <div className="slideItem">
+                  <div className="slideImage">
+                    <img src={slideFive} alt="slide-imagee" />
+                  </div>
+                  <p className="itemName">@jennsweeney</p>
+                </div>
+              </SwiperSlide>
             </Swiper>
           </div>
         </div>
