@@ -15,7 +15,8 @@
         .title {
           font-family: "Merriweather", serif;
           font-weight: 900;
-          font-size: 38px;
+          font-size: 40px;
+          text-transform: lowercase;
           color: #5a1f06;
           margin-bottom: 16px;
         }
@@ -23,7 +24,8 @@
           font-family: "AllTogetherSans", -apple-system, "BlinkMacSystemFont",
             "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
           font-weight: 500;
-          font-size: 16px;
+          text-transform: lowercase;
+          font-size: 20px;
           line-height: 1.625;
           letter-spacing: 0;
           margin-bottom: 8px;
